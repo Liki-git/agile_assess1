@@ -1,0 +1,135 @@
+JENKINS – Case Studies with Codes
+✅ Case Study 1: Basic Jenkins Setup & Job Execution
+Where to write code:
+👉 In Freestyle Job → Build → Execute Windows batch command
+
+Code:
+echo Hello Jenkins
+  
+Steps:
+Create Freestyle Job
+Add build step → Execute Windows batch command
+Paste code → Save → Build Now
+  
+✅ Case Study 2: Jenkins with GitHub Integration
+Where to add code:
+👉 Freestyle Job → Source Code Management → Git
+👉 Build → Execute Windows batch command
+
+Code:
+
+echo Building Project
+
+Steps:
+Add GitHub repo URL in SCM
+Add build step and paste code
+Enable trigger (Poll SCM or Webhook)
+  
+✅ Case Study 3: Job Chaining
+Where to configure:
+👉 Job → Post-build Actions
+  
+No coding required, only setting:
+
+Steps:
+
+In Job-A → Add “Build other projects”
+Enter: Job-B
+In Job-B → Trigger Job-C
+  
+✅ Case Study 4: Jenkins Pipeline (Basic)
+Where to write code:
+👉 Pipeline Job → Pipeline Script
+
+Code:
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build Stage'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test Stage'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy Stage'
+            }
+        }
+    }
+}
+
+✅ Case Study 5: Pipeline as Code (Jenkinsfile)
+Where to write code:
+👉 Create file in project → Jenkinsfile
+
+Code (same as pipeline):
+  pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Build'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Test'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploy'
+            }
+        }
+    }
+}
+Then:
+Push to GitHub
+In Jenkins → Pipeline → Select Pipeline script from SCM
+
+✅ Case Study 6: Real CI/CD Pipeline
+Where to write code:
+👉 Pipeline Job or Jenkinsfile
+
+Sample Code:
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                echo 'Building app'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Running tests'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying app'
+            }
+        }
+    }
+    post {
+        always {
+            echo 'Pipeline completed'
+        }
+    }
+}
+
+✅ Case Study 7: Jenkins Administration
+Where to configure:
+👉 Jenkins Dashboard → Manage Jenkins
+
+No coding, only settings:
+
+Manage Users
+Manage Nodes
+Install Plugins
+Configure Security
